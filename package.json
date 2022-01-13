@@ -1,0 +1,59 @@
+{
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "file-loader": "^6.2.0",
+    "prettier": "^1.19.1",
+    "prettier-airbnb-config": "^1.0.0",
+    "style-loader": "^3.3.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "name": "advance-react-store",
+  "description": "React store with all hooks in react, this app will can use google maps api  and other features like strapi for CMS",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack --mode production",
+    "lint": "./node_modules/.bin/eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taberoajorge/advance-react-store.git"
+  },
+  "keywords": [
+    "styled-components",
+    "ReactJs",
+    "Javscript",
+    "eslint-airbnb-config",
+    "prettier",
+    "babel",
+    "webpack"
+  ],
+  "author": "Jorge Taberoa <taberoajorge@pm.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taberoajorge/advance-react-store/issues"
+  },
+  "homepage": "https://github.com/taberoajorge/advance-react-store#readme"
+}
