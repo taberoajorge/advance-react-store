@@ -1,10 +1,18 @@
 import React from 'react';
+import Header from '../components/Header';
+import Layout from '../containers/Layout';
+import { Theme } from '../Theme';
 
 function App() {
+  const [theme, setTheme] = React.useState('ligth');
+
   return (
-    <h1>
-      Hola mundo
-    </h1>
+    <Theme theme={theme} >
+      <Header />
+      <Layout>
+        <h1>Hello World</h1>
+      </Layout>
+    </ Theme>
   );
 }
 
