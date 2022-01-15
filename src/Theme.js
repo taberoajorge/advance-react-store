@@ -1,20 +1,21 @@
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyles';
 
 
 const themes = {
-  ligth: {
-    bg: '#fff',
+  true: {
+    bg: 'hsl(0, 0%, 100%)',
     color: 'black',
   },
-  dark: {
-    bg: '#000',
+  false: {
+    bg: 'hsl(230, 17%, 14%)',
     color: 'white',
   },
 };
 
 export const Theme = (props) => (
-  <ThemeProvider >
+  <ThemeProvider theme={themes[props.theme]} >
     <GlobalStyle />
     {props.children}
   </ThemeProvider>

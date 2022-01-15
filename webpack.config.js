@@ -11,6 +11,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+			'@logos': path.resolve(__dirname, 'src/assets/'),
+		}
   },
   module: {
     rules: [
@@ -34,9 +37,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        type: 'asset/inline',
-        use: ['file-loader'],
+				test: /\.(png|svg|jpg|gif)$/,
+				type: 'asset'
       },
     ],
   },

@@ -1,8 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledMain = styled.main`
+  
+`;
 
 function Layout({ children }) {
   return (
-    <main>{children}</main>
+    <StyledMain>{children}</StyledMain>
   );
 }
 

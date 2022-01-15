@@ -4,13 +4,18 @@ import Layout from '../containers/Layout';
 import { Theme } from '../Theme';
 
 function App() {
-  const [theme, setTheme] = React.useState('ligth');
+  const [theme, setTheme] = React.useState(true);
 
   return (
     <Theme theme={theme} >
-      <Header />
+      <Header theme={theme} setTheme={setTheme}/>
       <Layout>
-        <h1>Hello World</h1>
+        <section>
+          <h1>Hola mundo</h1>
+          <article>
+            <h2>epale</h2>
+          </article>
+        </section>
       </Layout>
     </ Theme>
   );
