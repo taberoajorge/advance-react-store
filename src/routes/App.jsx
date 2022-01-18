@@ -1,4 +1,5 @@
 import React from 'react';
+import Characters from '../containers/Characters';
 import Header from '../components/Header';
 import Layout from '../containers/Layout';
 import { Theme } from '../Theme';
@@ -11,9 +12,8 @@ function App() {
       <Header theme={theme} setTheme={setTheme}/>
       <Layout>
         <section>
-          <h1>Hola mundo</h1>
           <article>
-            <h2>epale</h2>
+            <Characters />
           </article>
         </section>
       </Layout>
