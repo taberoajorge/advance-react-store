@@ -3,6 +3,7 @@ import logo from '../assets/logo.png';
 import logo_mobile from '../assets/logo_mobil.png';
 import styled from 'styled-components';
 import ToggleButton from './ToggleButton';
+import ThemeContext from '../context/ThemeContext';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -10,6 +11,9 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   height: 15vh;
   width: 100vw;
+  & > picture {
+    height: 100%;
+  }
 `;
 
 const StyledLogo = styled.img`
@@ -23,6 +27,8 @@ const StyledNav = styled.nav`
 `;
 
 function Header({ theme, setTheme }) {
+  const color = React.useContext(ThemeContext);
+
   return (
     <StyledHeader>
       <picture>
