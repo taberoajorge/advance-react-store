@@ -10,6 +10,7 @@ function App() {
 
   return (
     <FavoriteProvider>
+      
       <Theme theme={theme}>
         <Header theme={theme} setTheme={setTheme} />
         <Layout>
