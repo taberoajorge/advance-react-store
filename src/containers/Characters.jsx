@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import Character from '../components/Character';
-const URL_API = 'https://rickandmortyapi.com/api/character/';
+import { FavoriteContext } from '../context/FavoriteContext';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -11,20 +10,12 @@ const StyledContainer = styled.div`
 `;
 
 function Characters() {
-  const [character, setCharacter] = React.useState([]);
-
-  React.useEffect( async() => {
-     await axios.get(URL_API)
-    .then((response)=>{
-      console.log(response.data.results);
-      setCharacter(response.data.results);
-    })
-  }, []);
+  const {filteredUsers} = React.useContext(FavoriteContext);
 
   return (
     <StyledContainer>
-      {character.map(item => (
-       <Character key={item.id} item={item} />
+      {filteredUsers.map(item => (
+        <Character key={item.id} item={item} />
       ))}
     </StyledContainer>
   );

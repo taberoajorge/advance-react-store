@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { FavoriteContext } from '../context/FavoriteContext';
 
 const StyledMain = styled.main`
-  
 `;
 const StyledFavoriteContainer = styled.div`
   margin: 1rem;
@@ -18,8 +17,11 @@ const StyledFavoriteContainer = styled.div`
 `;
 
 function Layout({ children }) {
-  const { state } = React.useContext(FavoriteContext);
+  const { state, search, setSearch } = React.useContext(FavoriteContext);
 
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
+  }
 
   return (
     <StyledMain>
@@ -29,6 +31,9 @@ function Layout({ children }) {
           <p key={fav.id}>{fav.name}</p>
         ))}
       </StyledFavoriteContainer>
+      <div>
+        <input type="text" value={search} onChange={e => handleSearch(e)} />
+      </div>
       {children}
     </StyledMain>
   );

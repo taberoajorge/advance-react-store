@@ -1,4 +1,6 @@
 import React from 'react';
+import useFetch from '../hooks/useFetch';
+
 const FavoriteContext = React.createContext();
 
 function FavoriteProvider(props) {
@@ -8,11 +10,28 @@ function FavoriteProvider(props) {
     dispatch({ type: actionTypes.addToFavorite, payload: person });
   };
 
+  const characters = useFetch();
+  const [search, setSearch] = React.useState('');
+
+  // const filteredUsers = characters.filter(user => {
+  //   return user.name.toLowerCase().includes(search.toLowerCase());
+  // });
+
+  const filteredUsers = React.useMemo(
+    () =>
+      characters.filter(user => {
+        return user.name.toLowerCase().includes(search.toLowerCase());
+      }),
+    [characters, search]
+  );
+
   return (
     <FavoriteContext.Provider
       value={{
         OnAddToFavorite,
-        state
+        state,
+        setSearch,
+        filteredUsers,
       }}
     >
       {props.children}
