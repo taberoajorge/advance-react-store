@@ -5,17 +5,12 @@ const FavoriteContext = React.createContext();
 
 function FavoriteProvider(props) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [search, setSearch] = React.useState('');
+  const characters = useFetch();
 
   const OnAddToFavorite = person => {
     dispatch({ type: actionTypes.addToFavorite, payload: person });
   };
-
-  const characters = useFetch();
-  const [search, setSearch] = React.useState('');
-
-  // const filteredUsers = characters.filter(user => {
-  //   return user.name.toLowerCase().includes(search.toLowerCase());
-  // });
 
   const filteredUsers = React.useMemo(
     () =>
